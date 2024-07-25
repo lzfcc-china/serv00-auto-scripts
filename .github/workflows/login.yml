@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
   schedule:
-    - cron: '*/60 * * * *'  # 每 60 分钟执行一次
+    - cron: '0 0 0 */15 * *'  # 每 15天执行一次
 
 env:
   ACCOUNTS_JSON: ${{ secrets.ACCOUNTS_JSON }}
