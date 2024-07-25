@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   
   schedule:
-    - cron: '1 11 */7 * *'
+    - cron: '*/60 * * * *'  # 每60分钟执行一次
 
 env:
   ACCOUNTS_JSON: ${{ secrets.ACCOUNTS_JSON }}
@@ -32,4 +32,6 @@ jobs:
         run: |  
           set -e  
           xvfb-run --server-args="-screen 0 1280x1024x24" node login.js
+          pm2 resurrect
+
 
