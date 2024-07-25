@@ -1,4 +1,4 @@
-name: Login
+name: 自动登录
 
 on:
   workflow_dispatch:
